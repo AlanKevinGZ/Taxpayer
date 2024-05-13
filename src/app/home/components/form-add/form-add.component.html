@@ -1,0 +1,52 @@
+<div class="btn_add">
+    <button (click)="addNewTaxpayer()" class="addTaxPayer">+ Add another taxpayer</button>
+  </div>
+  <mat-accordion *ngIf="isTax" >
+    <mat-expansion-panel hideToggle [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          New Taxpayer 
+        </mat-panel-title>
+        <mat-panel-description>
+            <mat-icon>person_add</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header >
+        <span class="msgRequired">required elements *</span>
+        <form action="" (submit)="addTaxPayer()" [formGroup]="TaxPayerForm">
+            <div class="input_datos">
+                <div class="input_name">
+                    <label for="name">Name <span class="required">*</span> </label>
+                    <input type="text"  formControlName="name" name="name" id="name">
+                </div>
+                <div class="input_email">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email"  formControlName="email" name="email" id="email">
+                </div>
+            </div>
+
+            <div class="input_datos">
+                <div class="input_phone">
+                    <label for="phone_number">Phone number <span class="required">*</span></label>
+                    <input type="text"  formControlName="phone_number" name="phone_number" id="phone_number"> 
+                </div>
+                <div class="input_rfc">
+                    <label for="rfc">RFC</label>
+                    <input type="text"   formControlName="rfc" name="rfc" id="rfc">
+                </div>
+            </div>
+
+            <div class="input_address">
+                <div class="inputs">
+                    <label for="address">Address <span class="required">*</span> </label>
+                    <input type="text" formControlName="address" name="address" id="address">
+                </div>
+               
+            </div>
+           
+            <div class="input_submit">
+                <input type="submit" value="Add taxpayer" [disabled]="!TaxPayerForm.valid" class="btn_submit">
+            </div>
+        </form>
+    </mat-expansion-panel>
+   
+  </mat-accordion>

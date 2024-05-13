@@ -1,0 +1,68 @@
+<header>
+    <div class="title_header">
+        <h1>FIXAT</h1>
+        <p>Taxpayer Registration Form</p>
+    </div>
+</header>
+
+
+<main>
+    <div class="container">
+        <app-form-add (taxpayerAdded)="onTaxpayerAdded($event)"></app-form-add>
+    
+          <!-- list_taxe -->
+       <div class="container_user">
+            <!-- ----- -->
+           
+            <mat-accordion *ngFor="let taxPayer of  this.taxPayers;let i=index">
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <span class="num_taxPayer">{{i+1}} </span>  {{taxPayer.name}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <mat-icon> vertical_align_bottom</mat-icon>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header >
+                    <form action="">
+                        <div class="input_datos">
+                            <div class="input_name">
+                                <label for="">Name</label>
+                                <input type="text" [value]="taxPayer.name" disabled>
+                            </div>
+                            <div class="input_email">
+                                <label for="">Email</label>
+                                <input type="email" [value]="taxPayer.email" disabled>
+                            </div>
+                        </div>
+
+                        <div class="input_datos">
+                            <div class="input_phone">
+                                <label for="">Phone number</label>
+                                <input type="text" [value]="taxPayer.phone_number" disabled> 
+                            </div>
+                            <div class="input_rfc">
+                                <label for="">RFC</label>
+                                <input type="text"  [value]="taxPayer.rfc ? taxPayer.rfc : 'XAXX010101000'" disabled >
+                            </div>
+                        </div>
+
+                        <div class="input_address">
+                            <div class="inputs">
+                                <label for="">Address</label>
+                                <input type="text" [value]="taxPayer.address" disabled>
+                            </div>
+                           
+                        </div>
+                    </form>
+                </mat-expansion-panel>
+               
+              </mat-accordion>
+              
+              
+
+              
+            <!-- ---- -->
+       </div>
+    </div>
+</main>

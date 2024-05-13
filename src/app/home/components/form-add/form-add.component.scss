@@ -1,0 +1,83 @@
+
+
+  .addTaxPayer{
+    background-color: #0c08d8;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  mat-expansion-panel {
+    margin: 1rem 0;
+    .msgRequired{
+      color: red;
+      font-weight: bold;
+    }
+    mat-expansion-panel-header{
+      mat-panel-description{
+       display: flex;
+       justify-content: right;
+        mat-icon{
+          display: block;
+        }
+      }
+    }
+  }
+  mat-panel-title {
+    span {
+      background-color: #146dbf;
+      color: white;
+      padding: 1rem 2rem;
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+  
+  form {
+    label {
+      display: inline-block;
+      margin: 5px 0;
+    }
+    .input_datos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 1rem 0;
+      input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #d1d5db;
+        border-radius: 10px;
+      }
+    }
+  
+    .input_address {
+      input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #d1d5db;
+        border-radius: 10px;
+      }
+    }
+    .required{
+      font-weight: bold;
+      color: red;
+    }
+  
+    .input_submit{
+      text-align: right;
+      .btn_submit{
+        background-color:#FF9900 ;
+        color: white;
+        border: none;
+        padding: 10px;
+        margin: 1rem 0;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+   
+  }
+  
